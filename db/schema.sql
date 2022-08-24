@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS blogSiteTemp_db;
+CREATE DATABASE blogSiteTemp_db;
