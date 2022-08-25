@@ -1,6 +1,9 @@
 <!-- Loop over each object in the topic array -->
 {{#each topics as |topic| }}
-<div class="row mb-4 project">
+
+
+  <a href='/topic/{{topic.id}}' target="_blank" class="nav-link">
+  <div class="row mb-4 topic l6 m12 s12 display-card card cardHover">
   <div class="col-md-5">
     <h2>
       <!-- Call helper function with triple brackets to render the emoji span as HTML -->
@@ -14,7 +17,7 @@
       {{topic.description}}
     </p>
   </div>
-<div class="up-down-vote-bttns">
+<div class="col-md-1 up-down-vote-bttns">
    <div>
         <a href="#"><i class="fa fa-caret-up fa-2x up-vote"></i></a>
   </div>
@@ -23,4 +26,8 @@
   </div>
   </div>
 </div>
+</a>
+
 {{/each}}
+
+<script src="./js/homepage.js"></script>
