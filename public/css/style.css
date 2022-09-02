@@ -27,3 +27,12 @@ header, .topic:not(:last-child) {
   display:block;
   padding:15px
  }
+
+ .body-cards{
+  display: flex;
+  flex-wrap: wrap-reverse;
+ }
+
+ .hidden{
+  display: none;
+ }

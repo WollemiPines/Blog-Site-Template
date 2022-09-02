@@ -4,6 +4,7 @@ const loginFormHandler = async (event) => {
   // Collect values from the login form
   const email = document.querySelector('#email-login').value.trim();
   const password = document.querySelector('#password-login').value.trim();
+  const loginErr = document.querySelector('.loginErr');
 
   if (email && password) {
     // Send a POST request to the API endpoint
@@ -16,8 +17,8 @@ const loginFormHandler = async (event) => {
     if (response.ok) {
       // If successful, redirect the browser to the profile page
       document.location.replace('/profile');
-    } else {
-      alert(response.statusText);
+    }  else {
+      loginErr.classList.remove('hidden');
     }
   }
 };
@@ -28,6 +29,8 @@ const signupFormHandler = async (event) => {
   const name = document.querySelector('#name-signup').value.trim();
   const email = document.querySelector('#email-signup').value.trim();
   const password = document.querySelector('#password-signup').value.trim();
+  const signUpErr = document.querySelector('.signUpErr');
+  const passwordErr = document.querySelector('.passwordErr');
 
   if (name && email && password) {
     const response = await fetch('/api/users', {
@@ -38,8 +41,11 @@ const signupFormHandler = async (event) => {
 
     if (response.ok) {
       document.location.replace('/profile');
-    } else {
-      alert(response.statusText);
+    }   if(password.length < 8){
+      passwordErr.classList.remove('hidden'); 
+    }
+    else {signUpErr.classList.remove('hidden');
+          passwordErr.classList.add('hidden'); 
     }
   }
 };
