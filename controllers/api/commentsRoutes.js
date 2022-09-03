@@ -22,7 +22,7 @@ router.post('/', withAuth, async (req, res) => {
 
   router.get('/', async (req, res) => {
     try {
-      // Get all Topics and JOIN with user data
+      // Get all comments and JOIN with user data
       const commentsData = await Comments.findAll({
         include: [
           {
@@ -36,7 +36,9 @@ router.post('/', withAuth, async (req, res) => {
       const comments = commentsData.map((comment) => comment.get({ plain: true }));
   
       // Pass serialized data and session flag into template
-      res.render('homepage', { 
+
+      // THIS PAGE DOES NOT EXIST
+      res.render('comments', { 
         comments, 
         logged_in: req.session.logged_in 
       });

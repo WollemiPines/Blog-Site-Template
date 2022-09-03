@@ -14,6 +14,16 @@ const delButtonHandler = async (event) => {
   }
 };
 
+function newTopicRedirect(){
+  console.log('hello');
+  document.location.replace('/newTopic');
+}
+document
+.querySelector('.newTopic')
+.addEventListener('click', newTopicRedirect);
+
 document
   .querySelector('.topic-list')
   .addEventListener('click', delButtonHandler);
+
+
