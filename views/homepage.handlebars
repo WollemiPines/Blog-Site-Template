@@ -22,8 +22,10 @@
   </div>
 </div>
 </div>
+{{/each}}
 
-
+{{#each comments as |comment|}}
+{{comment.content}}
 {{/each}}
 
 <script src="./js/homepage.js"></script>

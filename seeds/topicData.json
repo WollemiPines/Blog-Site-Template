@@ -1,14 +1,17 @@
 [
   {
     "name": "Gear",
-    "description": "New gear developments and things"
+    "description": "New gear developments and things",
+    "user_id": 1
   },
   {
     "name": "Incidents",
-    "description": "General injuries sustained during slacklining. Inc details about people involved, incidents or gear failure and reccomendations going forawrd"
+    "description": "General injuries sustained during slacklining. Inc details about people involved, incidents or gear failure and reccomendations going forawrd",
+    "user_id": 2
   },
   {
     "name": "Trip reports",
-    "description": "Spin us a yarn about your recent trip."
+    "description": "Spin us a yarn about your recent trip.",
+    "user_id": 3
   }
 ]

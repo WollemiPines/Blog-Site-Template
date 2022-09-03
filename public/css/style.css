@@ -28,7 +28,7 @@ header, .topic:not(:last-child) {
   padding:15px
  }
 
- .body-cards{
+ .body-cards .up-down-vote-bttns{
   display: flex;
   flex-wrap: wrap-reverse;
  }
