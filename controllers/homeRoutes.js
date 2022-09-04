@@ -35,11 +35,11 @@ router.get('/topic/:id', async (req, res) => {
       include: [
         {
           model: User,
-          attributes: ['name'],
+          attributes: ['name', 'id'],
         },
         {
           model: Comments,
-          attributes: ['content'],
+          attributes: ['content', 'id', 'date_created', 'user_id', 'topic_id'],
         },
       ],
     });
@@ -50,6 +50,7 @@ router.get('/topic/:id', async (req, res) => {
       ...topic,
       logged_in: req.session.logged_in
     });
+
   } catch (err) {
     res.status(500).json(err);
   }

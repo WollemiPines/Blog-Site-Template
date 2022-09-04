@@ -2,6 +2,7 @@ const router = require('express').Router();
 const { Topic } = require('../../models');
 const withAuth = require('../../utils/auth');
 
+// Create new topic
 router.post('/', withAuth, async (req, res) => {
   try {
     const newTopic = await Topic.create({
@@ -15,6 +16,21 @@ router.post('/', withAuth, async (req, res) => {
   }
 });
 
+// Update Topic by id
+router.put('/:id', withAuth, async (req, res) => {
+  try {
+    const topicData = await Topic.update({
+      ...req.body,
+      user_id: req.session.user_id,
+    });
+
+    res.status(200).json(topicData);
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
+
+// Delete topic by id
 router.delete('/:id', withAuth, async (req, res) => {
   try {
     const topicData = await Topic.destroy({

@@ -16,10 +16,12 @@
   {{#if comments.length}}
   {{#each comments as |comment|}}
 <h3>{{comment.content}}</h3>
-<p>Created by {{comment.user_id}} on </p>
+
+ <p>Created by  {{user.name}} </p>
+
+<p>on {{format_date comment.date_created}}</p>
 {{/each}}
 {{/if}}
-{{format_date date_created}}
 </div>
 
 <script src="/js/comments.js"></script>
