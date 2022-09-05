@@ -10,7 +10,8 @@ const newCommentHandler = async (event) => {
     if (commentContents){
         const response = await fetch(`/api/comments`, {
             method: 'POST',
-            body: JSON.stringify({commentContents}),
+            body: JSON.stringify({commentContents:commentContents}),
+            // need to add topic id in here
             headers: {
               'Content-Type': 'application/json',
             },
@@ -25,11 +26,3 @@ const newCommentHandler = async (event) => {
 } 
 
 document.querySelector('.submitComment').addEventListener('click', newCommentHandler);
-
-Handlebars.registerHelper('if_eq', function(a, b, opts) {
-    if (a == b) {
-        return opts.fn(this);
-    } else {
-        return opts.inverse(this);
-    }
-  });
