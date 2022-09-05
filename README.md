@@ -10,6 +10,7 @@ The app in action; https://safe-garden-41274.herokuapp.com/
 1. [Motivation](#motivation)
 1. [Contribution guidelines](#contribute)
 1. [Test Instructions](#test)
+1. [Errors](#errors)
 1. [Questions](#questions)
 
 
@@ -35,6 +36,10 @@ Create a fork of this repo to work on expanding the functionality
 By sure to run npm i to install any dependancies. 
 Set your mysql password and session secret
 the node server.js
+
+## Errors: <a name="errors"></a>
+The comments routes are failing to send the topic.id 
+Some more work is required to solve this as without the realivent topic id, the comments cannot be added to the realivent database and joined with the topic's by id.
 
 ## Questions <a name="questions"></a>
 Please email any questions about this project to: Chrisw1096@gmail.com
