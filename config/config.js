@@ -2,7 +2,7 @@ module.exports =
 {
     "devlopment":{
         "username":PROCESS.ENV.MYSQL_USER,
-        "password": PROCESS.ENV.MYSQL_,
+        "password": PROCESS.ENV.MYSQL_KEY,
         "database": PROCESS.ENV.MYSQL_DBNAME,
         "host": "127.0.0.1",
         "dialect": "mysql"
