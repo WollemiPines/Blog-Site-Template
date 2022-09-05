@@ -3,7 +3,6 @@ const { Topic, Comments, User } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 router.post('/', withAuth, async (req, res) => {
-  console.log("working in the routes for comments line 6");
     try {
       const newComments = await Comments.create({
         ...req.body,
@@ -11,7 +10,6 @@ router.post('/', withAuth, async (req, res) => {
         user_id: req.session.user_id,
         topic_id: topic.id,
       });
-      console.log("here");
   
       res.status(200).json(newComments);
     } catch (err) {
