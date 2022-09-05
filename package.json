@@ -1,12 +1,16 @@
 {
-  "name": "crowd-funding",
+  "name": "blog-site",
   "version": "1.0.0",
-  "description": "",
+  "description": "a template for blog sites with front and back end",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
-    "seed": "node seeds/seed.js"
+    "seed": "node seeds/seed.js",
+    "dev": "react-scripts start",
+"start": "serve -s build",
+"build": "react-scripts build",
+"test": "react-scripts test --env=jsdom",
+"eject": "react-scripts eject",
+"heroku-postbuild": "npm run build"
   },
   "keywords": [],
   "author": "",
@@ -20,7 +24,8 @@
     "express-session": "^1.17.1",
     "mysql": "^2.18.1",
     "mysql2": "^2.2.5",
-    "sequelize": "^6.3.5"
+    "sequelize": "^6.3.5",
+    "serve": "^14.0.1"
   },
   "devDependencies": {
     "eslint": "^7.32.0",
